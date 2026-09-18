@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.core.config import settings
+from app.api.routes.locations import router as location_router
 
 
 app = FastAPI(
@@ -9,6 +10,8 @@ app = FastAPI(
     debug=settings.debug,
 )
 
+
+app.include_router(location_router)
 
 
 
