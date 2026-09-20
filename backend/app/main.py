@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from app.core.config import settings
 from app.api.routes.locations import router as location_router
 from app.api.routes.weather import router as weather_router
+from app.api.routes.searches import router as search_router
 
 
 app = FastAPI(
@@ -14,6 +15,7 @@ app = FastAPI(
 
 app.include_router(location_router)
 app.include_router(weather_router)
+app.include_router(search_router)
 
 
 
