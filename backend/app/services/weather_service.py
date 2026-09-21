@@ -7,7 +7,12 @@ WEATHER_URL = "https://api.open-meteo.com/v1/forecast"
 
 
 
-async def get_weather(latitude: float, longitude: float):
+async def get_weather(
+    latitude: float,
+    longitude: float,
+    start_date: date | None = None,
+    end_date: date | None = None
+    ):
     params = {
         "latitude": latitude,
         "longitude": longitude,
@@ -26,9 +31,16 @@ async def get_weather(latitude: float, longitude: float):
             "precipitation_probability_max",
             "precipitation_sum",
         ],
-        "forecast_days": 5,
         "timezone": "auto",
     }
+
+
+    if start_date and end_date:
+        params["start_date"] = start_date.isoformat()
+        params["end_date"] = end_date.isoformat()
+
+    else:
+        params["forcast_days"] = 5
 
 
     async with httpx.AsyncClient() as client:
@@ -41,7 +53,16 @@ async def get_weather(latitude: float, longitude: float):
 
     response.raise_for_status()
 
-    return response.json()
+    data = response.json()
+
+    if not start_date and not end_date:
+        data["daily"]["time"] = data["daily"]["time"][:5]
+
+        for key in data["daily"]:
+            if isinstance(data["daily"][key], list):
+                data["daily"][key] = data["daily"][key][:5]
+
+    return data
 
 
 

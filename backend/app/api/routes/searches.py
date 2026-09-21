@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from datetime import date
 
 
 from app.database.dependencies import get_db
@@ -47,10 +48,22 @@ async def create_weather_search(
             detail="Start date cannot be after end date"
         )
 
+    date_range = (
+        search.end_date - search.start_date
+    ).days + 1
+
+    if date_range > 5:
+        raise HTTPException(
+            status_code=400,
+            detail="Weather search cannot exceed 5 days"
+        )
+
 
     weather_data= await get_weather(
         latitude=location.latitude,
-        longitude=location.longitude
+        longitude=location.longitude,
+        start_date=search.start_date,
+        end_date=search.end_date,
     )
 
 
@@ -70,6 +83,31 @@ async def create_weather_search(
     return new_search
 
 
+@router.get("/", response_model=list[WeatherSearchResponse])
+def get_weather_searches(
+    db: Session = Depends(get_db),
+):
+    return db.query(WeatherSearch).all()
+
+
+
+
+@router.get("/{search_id}", response_model=WeatherSearchResponse)
+def get_weather_search(
+    search_id: int,
+    db: Session = Depends(get_db),
+):
+    search = db.query(WeatherSearch).filter(
+        WeatherSearch.id == search_id
+    ).first()
+
+    if not search:
+        raise HTTPException(
+            status_code=404,
+            detail="Weather search not found",
+        )
+
+    return search
 
 
 
