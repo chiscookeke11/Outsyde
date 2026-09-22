@@ -8,6 +8,7 @@ class Settings(BaseSettings):
 
     database_url: str
     youtube_api_key: str
+    frontend_origins: str = "http://localhost:3000"
 
     model_config = SettingsConfigDict(
         env_file = ".env",
@@ -17,5 +18,4 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-
 

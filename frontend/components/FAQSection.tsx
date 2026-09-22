@@ -23,7 +23,7 @@ export default function FAQSection() {
 
                 <h3 className=" text-4xl font-season-vf " >Get live weather conditions and a 5-day forecast for wherever your plans take you.</h3>
 
-                <button>Check the Weather</button>
+                <a className="rounded bg-black px-5 py-3 text-white transition hover:bg-black/80" href="#weather">Check the Weather</a>
 
             </div>
 

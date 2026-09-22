@@ -12,7 +12,7 @@ export default function Hero() {
 
                 <p className="text-2xl font-normal font-uncut w-[75%] " >Plan your day. Plan your week. Make better decisions with the weather.</p>
 
-                <button>Check the Weather</button>
+                <a className="rounded bg-black px-5 py-3 font-uncut text-white transition hover:bg-black/80" href="#weather">Check the Weather</a>
 
             </div>
 
