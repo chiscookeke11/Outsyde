@@ -15,19 +15,6 @@ export default function Header() {
                 </h2>
             </div>
 
-            <div className="flex items-center gap-3">
-                <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 text-neutral-600 hover:bg-neutral-50">
-                    <Search size={18} />
-                </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 text-neutral-600 hover:bg-neutral-50">
-                    <Bell size={18} />
-                </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 text-neutral-600 hover:bg-neutral-50">
-                    <Settings size={18} />
-                </button>
-            </div>
         </header>
     );
 }

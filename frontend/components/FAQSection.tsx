@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import Button from "./ui/Button";
 
 
 
@@ -19,11 +21,15 @@ export default function FAQSection() {
 
 
             <div className="w-full max-w-[700px]  flex flex-col items-center justify-center gap-5 z-10 text-center " >
-                <h5 className="text-2xl  " >Ready to plan smarter?</h5>
+                <h5 className="text-lg md:text-2xl  " >Ready to plan smarter?</h5>
 
-                <h3 className=" text-4xl font-season-vf " >Get live weather conditions and a 5-day forecast for wherever your plans take you.</h3>
+                <h3 className=" text-2xl md:text-4xl font-season-vf " >Get live weather conditions and a 5-day forecast for wherever your plans take you.</h3>
 
-                <button>Check the Weather</button>
+                <Link href={"/dashboard"} className="cursor-pointer " >
+                    <Button className="font-modern_era_mono text-base md:text-xl mt-3 cursor-pointer bg-[#ffffff]! text-[#87cefa]! px-4! py-3 " >
+                        Check the Weather
+                    </Button>
+                </Link>
 
             </div>
 
