@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from app.database.dependencies import get_db
 from app.models.location import Location
 from app.schemas.location import LocationCreate, LocationResponse
+from app.services.geocoding_service import geocode_location
 
 
 
@@ -45,10 +46,15 @@ def get_locations(db: Session = Depends(get_db)):
 
 
 @router.get("/search")
-async def search_location(query: str):
+async def search_locations(query: str):
     try:
-        location = await search_location_by_name(query)
-        return location
+        location = await geocode_location(query)
+
+        return {
+            "query": query,
+            "results": [location] if location else [],
+        }
+
     except Exception as e:
         raise HTTPException(
             status_code=502,

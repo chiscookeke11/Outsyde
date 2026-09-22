@@ -1,5 +1,6 @@
 import csv
 import io
+import json
 
 from fastapi.responses import StreamingResponse
 from fastapi import APIRouter, Depends
@@ -33,7 +34,13 @@ def export_searches_json(
         for search in searches
     ]
 
-    return JSONResponse(content=data)
+    return StreamingResponse(
+        iter([json.dumps(data, default=str, indent=2)]),
+        media_type="application/json",
+        headers={
+            "Content-Disposition": "attachment; filename=weather_searches.json"
+        },
+    )
 
 
 
