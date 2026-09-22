@@ -1,0 +1,17 @@
+[33mcd18a9d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m HEAD@{0}: commit: updates
+[33mc64fcf1[m HEAD@{1}: commit: FIX: fixed the backend geocoding error
+[33mc9f2079[m HEAD@{2}: reset: moving to c9f207901eec1788a92d3fe9d0acf7342357292d
+[33mf22ea4d[m HEAD@{3}: reset: moving to f22ea4dea6ba9045298e723815a859dbf38c370b
+[33mc9f2079[m HEAD@{4}: commit: updates
+[33mf22ea4d[m HEAD@{5}: commit: FEAT: implemented the dashboard and wired it up to the backend
+[33me5e68f3[m HEAD@{6}: commit: Feat: implemented the landing page
+[33m40a758c[m HEAD@{7}: commit: FEAT: completed the backend
+[33m65569bd[m HEAD@{8}: commit: Feat: Implemented the Location search module
+[33me72b834[m HEAD@{9}: commit: FEAT: implemented the weather route
+[33meb5dc04[m HEAD@{10}: commit: FEAT: implemented the location routes and wrote complimentary tests
+[33m1631989[m HEAD@{11}: commit: FEAT; implemented the location schema
+[33m8ef552a[m HEAD@{12}: commit: FEAT: setup the database structure
+[33mfaf42d0[m HEAD@{13}: commit: FEAT: Setup the backend
+[33mdb03ee7[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{14}: checkout: moving from main to dev
+[33mdb03ee7[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{15}: Branch: renamed refs/heads/master to refs/heads/main
+[33mdb03ee7[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{17}: commit (initial): first commit
