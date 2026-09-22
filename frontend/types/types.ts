@@ -21,3 +21,37 @@ export interface WeatherResponse {
     daily: DailyWeather;
     timezone: string;
 }
+
+
+export interface LocationResult {
+    name: string;
+    country: string;
+    admin1?: string;
+    latitude: number;
+    longitude: number;
+    timezone?: string;
+}
+
+export interface LocationSearchResponse {
+    query: string;
+    results: LocationResult[];
+}
+
+export interface SavedLocation {
+    id: number;
+    name: string;
+    country: string;
+    latitude: number;
+    longitude: number;
+    created_at: string;
+}
+
+
+export interface WeatherSearch {
+    id: number;
+    location_id: number;
+    start_date: string;
+    end_date: string;
+    weather_data: Record<string, unknown>;
+    created_at: string;
+}

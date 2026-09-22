@@ -20,7 +20,7 @@ const navigation = [
     },
     {
         name: "Locations",
-        href: "/locations",
+        href: "/dashboard/locations",
         icon: MapPin,
     },
     {
@@ -30,7 +30,7 @@ const navigation = [
     },
     {
         name: "Saved Searches",
-        href: "/searches",
+        href: "/dashboard/searches",
         icon: Search,
     },
     {
@@ -43,7 +43,7 @@ const navigation = [
 const secondaryNavigation = [
     {
         name: "Export",
-        href: "/export",
+        href: "/dashboard/export",
         icon: Download,
     },
 ];
