@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -12,7 +13,9 @@ export default function Hero() {
 
                 <p className="text-2xl font-normal font-uncut w-[75%] " >Plan your day. Plan your week. Make better decisions with the weather.</p>
 
-                <button>Check the Weather</button>
+                <Link href={"/dashboard"} >
+
+                    <button>Check the Weather</button></Link>
 
             </div>
 

@@ -44,6 +44,19 @@ def get_locations(db: Session = Depends(get_db)):
 
 
 
+@router.get("/search")
+async def search_location(query: str):
+    try:
+        location = await search_location_by_name(query)
+        return location
+    except Exception as e:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Unable to search for location: {str(e)}"
+        )
+
+
+
 # getting a particular location from the db
 @router.get("/{location_id}", response_model=LocationResponse)
 def get_location(location_id: int, db:Session = Depends(get_db)):
